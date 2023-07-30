@@ -1,0 +1,15 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+   name: configmap2
+   namespace: default
+data:
+  index.html: |
+     <html>
+        <head>
+           <title>Home Decor website</title>
+         </head>
+         <body>
+            <h1>This is Deployment Two!<h1>
+         </body>
+       </html>   
