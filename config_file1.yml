@@ -1,0 +1,16 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+    name: configmap1
+    namespace: default
+data:
+    index.html: |
+      <html>
+        <head>
+            <title>Clothing and Accessories website</title>
+        </head>
+        <body>
+            <h1>This is Deployment One!<h1>
+         </body>
+       </html>   
+       
