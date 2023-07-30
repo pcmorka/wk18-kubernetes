@@ -1,7 +1,8 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: pod-deployment1
+  name: nginx-deployment1
+  namespace: default
 spec:
   replicas: 2
   selector:
@@ -13,14 +14,15 @@ spec:
         app: nginx
     spec:
       containers:
-        - name: nginx-cont1
-          image: nginx:1.25.1
-          ports:
-            - containerPort: 80
-          volumeMounts:
-            - name: config-volume1
-      mountPath: /usr/share/nginx/html
-    volumes:
-      - name: config=volime1
+      - name: nginx
+        image: nginx
+        ports:
+        - containerPort: 80
+        volumeMounts:
+        - name: configvolume1
+          mountPath: /usr/share/nginx/html/
+      volumes:
+      - name: configvolume1
         configMap:
-          name: configmap1
+          name: configmap-1
+
